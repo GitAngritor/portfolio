@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import Title from '../components/Title.astro';
+import Briefcase from '../components/icons/Briefcase.astro'
 ---
 
 <Layout title="Portfolio - Abraham Hernández UX/UI">
 	<Hero img={"./uxui.webp"}/>
+	<section class="max-w-5xl mx-auto px-2">
+		<Title><Briefcase class="size-8"/> Experiencia profesional</Title>
+	</section>
 </Layout>
 
 <style>
