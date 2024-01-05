@@ -1,0 +1,73 @@
+---
+interface Props {
+	img: string;
+}
+
+const { img } = Astro.props;
+const abraham = [
+    {letter: 'A'},
+    {letter: 'B'},
+    {letter: 'R'},
+    {letter: 'A'},
+    {letter: 'H'},
+    {letter: 'A'},
+    {letter: 'M'}
+]
+const hernandez = [
+    {letter: 'H'},
+    {letter: 'E'},
+    {letter: 'R'},
+    {letter: 'N'},
+    {letter: 'Á'},
+    {letter: 'N'},
+    {letter: 'D'},
+    {letter: 'E'},
+    {letter: 'Z'}
+]
+const ux = [
+    {letter: 'U'},
+    {letter: 'X'},
+]
+const ui = [
+    {letter: 'U'},
+    {letter: 'I'},
+]
+const designer = [
+    {letter: 'D'},
+    {letter: 'E'},
+    {letter: 'S'},
+    {letter: 'I'},
+    {letter: 'G'},
+    {letter: 'N'},
+    {letter: 'E'},
+    {letter: 'R'}
+]
+---
+
+<section class="relative z-10 hero w-full bg-cover bg-center" style=`background-image: url('${img}'); clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);`>
+	<div class="bg-white/60 dark:bg-black/60 h-full w-full flex justify-center items-center">
+		<div class="flex justify-around dark:text-white w-full flex-wrap gap-5">
+			<div class="text-center">
+				<h1 class="font-bold text-5xl">
+					{abraham.map((item, index) => <span class="hover:text-sky-500 hover:scale-125 transition-all inline-block -tracking-wide">{item.letter}</span>)}
+					<br>
+                    {hernandez.map((item, index) => <span class="hover:text-sky-500 hover:scale-125 transition-all inline-block text-4xl tracking-wider">{item.letter}</span>)}
+				</h1>
+			</div>
+			<div class="text-center">
+				<h2 class="font-bold text-5xl">
+					{ux.map((item, index) => <span class="hover:text-sky-500 hover:scale-125 transition-all inline-block -tracking-wide">{item.letter}</span>)} & {ui.map((item, index) => <span class="text-sky-500 hover:scale-125 transition-all inline-block -tracking-wide">{item.letter}</span>)}
+					<br>
+                    {designer.map((item, index) => <span class="hover:text-sky-500 hover:scale-125 transition-all inline-block text-5xl tracking-widest">{item.letter}</span>)}
+				</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="absolute top-0 w-full hero bg-cover bg-center mt-8 blur-2xl -z-10" style=`background-image: url('${img}'); clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);`></div>
+<div class="absolute top-0 w-full hero bg-cover bg-center mt-16 blur-3xl -z-10 opacity-50" style=`background-image: url('${img}'); clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);`></div>
+<style>
+	.hero {
+		height: 90vh;
+	}
+</style>
